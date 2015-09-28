@@ -1,0 +1,3 @@
+Index:
+  resource: 'Sergiors\Apps\Bootstrap\Controller\IndexController'
+  type: annotation
