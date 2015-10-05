@@ -1,5 +1,6 @@
 <?php
 use Sergiors\Silex\Application;
+use Silex\Provider\MonologServiceProvider;
 
 require_once __DIR__.'/../bootstrap.php';
 
@@ -33,5 +34,11 @@ $app['orm.options'] = [
 ];
 
 $app['twig.loader.filesystem']->addPath(__DIR__.'/../src/Apps/Bootstrap/Resources/views', 'Bootstrap');
+
+if ($app['debug'] && class_exists('Monolog\Logger')) {
+    $app->register(new MonologServiceProvider(), [
+        'monolog.logfile' => 'php://stdout'
+    ]);
+}
 
 $app->run();
