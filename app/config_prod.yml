@@ -1,0 +1,25 @@
+imports:
+    - { resource: config.yml }
+
+twig.options:
+    debug: false
+    cache: %root_dir%/tmp/twig
+
+db.options:
+      driver: pdo_pgsql
+      host: localhost
+      user: ~
+      password: ~
+      dbname: ~
+
+orm.options:
+    query_cache: ~
+    result_cache: ~
+    metadata_cache: ~
+    host: localhost
+    port: ~
+    mappings:
+        -
+            type: annotation
+            namespace: Acme\Acme\Entity
+            path: %root_dir%/src/Acme/Entity

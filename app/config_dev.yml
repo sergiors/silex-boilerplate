@@ -1,0 +1,21 @@
+imports:
+    - { resource: config.yml }
+
+twig.options:
+    debug: true
+
+db.options:
+      driver: ~
+      host: ~
+      user: ~
+      password: ~
+      dbname: ~
+
+orm.options:
+    mappings:
+        -
+            type: annotation
+            namespace: Acme\Acme\Entity
+            path: %root_dir%/src/Acme/Entity
+
+monolog.logfile: php://stdout

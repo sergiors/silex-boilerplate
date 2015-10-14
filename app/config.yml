@@ -1,0 +1,9 @@
+orm.proxy_dir: %root_dir%/tmp/proxies
+
+router:
+    resource: %root_dir%/app/routing.yml
+
+db.options:
+    driverOptions:
+        \PDO::ATTR_EMULATE_PREPARES: false
+        \PDO::ATTR_STRINGIFY_FETCHES: false

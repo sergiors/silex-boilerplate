@@ -1,3 +1,3 @@
-Index:
-  resource: 'Sergiors\Apps\Bootstrap\Controller\IndexController'
-  type: annotation
+index:
+    resource: 'Acme\Apps\Bootstrap\Controller\IndexController'
+    type: annotation

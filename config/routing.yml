@@ -1,2 +1,0 @@
-Bootstrap:
-  resource: '../src/Apps/Bootstrap/Resources/config/routing.yml'

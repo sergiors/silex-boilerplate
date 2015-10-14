@@ -8,5 +8,5 @@ if (!$loader = require_once __DIR__.'/vendor/autoload.php') {
 AnnotationRegistry::registerLoader([$loader, 'loadClass']);
 
 if (!defined('APP_ENV')) {
-    define('APP_ENV', ($env = getenv('APP_ENV')) ? $env : 'development');
+    define('APP_ENV', ($env = getenv('APP_ENV')) ? $env : 'dev');
 }

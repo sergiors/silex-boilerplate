@@ -15,16 +15,16 @@
     "inbep/doctrine-orm-service-provider": "dev-master",
     "inbep/routing-service-provider": "dev-master",
     "inbep/annotation-service-provider": "dev-master",
-    "inbep/sensio-framework-extra-service-provider": "dev-master"
+    "inbep/sensio-framework-extra-service-provider": "dev-master",
+    "sergiors/lullaby": "dev-master"
   },
   "require-dev": {
     "monolog/monolog": "~1.17"
   },
   "autoload": {
     "psr-4": {
-      "Sergiors\\Sergiors\\": "src/Sergiors",
-      "Sergiors\\Silex\\": "src/Sergiors/Silex",
-      "Sergiors\\Apps\\": "src/Apps"
+      "Acme\\Acme\\": "src/Acme",
+      "Acme\\Apps\\": "src/Apps"
     }
   }
 }

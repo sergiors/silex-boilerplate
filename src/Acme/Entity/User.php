@@ -1,5 +1,5 @@
 <?php
-namespace Sergiors\Sergiors\Entity;
+namespace Acme\Acme\Entity;
 
 /**
  * @Entity
