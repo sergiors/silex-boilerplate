@@ -1,2 +1,3 @@
 apps_bootstrap:
-    resource: '../src/Apps/Bootstrap/Resources/config/routing.yml'
+    resource: %root_dir%/src/Apps/Bootstrap/Controller
+    type: annotation

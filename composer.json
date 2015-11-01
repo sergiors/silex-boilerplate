@@ -5,26 +5,27 @@
       "email": "sergio@inbep.com.br"
     }
   ],
-  "require": {
-    "silex/silex": "~1.3",
-    "symfony/yaml": "~2.7",
-    "symfony/doctrine-bridge": "~2.7",
-    "symfony/twig-bridge": "~2.7",
-    "twig/twig": "~1.22",
-    "inbep/templating-service-provider": "~1.1",
-    "inbep/doctrine-orm-service-provider": "dev-master",
-    "inbep/routing-service-provider": "dev-master",
-    "inbep/annotation-service-provider": "dev-master",
-    "inbep/sensio-framework-extra-service-provider": "dev-master",
-    "sergiors/lullaby": "dev-master"
-  },
-  "require-dev": {
-    "monolog/monolog": "~1.17"
-  },
   "autoload": {
     "psr-4": {
       "Acme\\Acme\\": "src/Acme",
       "Acme\\Apps\\": "src/Apps"
     }
+  },
+  "require": {
+    "silex/silex": "~1.3",
+    "symfony/config": "~2.7",
+    "symfony/yaml": "~2.7",
+    "symfony/doctrine-bridge": "~2.7",
+    "symfony/twig-bridge": "~2.7",
+    "symfony/monolog-bridge": "~2.7",
+    "monolog/monolog": "~1.17",
+    "twig/twig": "~1.22",
+    "sergiors/templating-service-provider": "~1.1",
+    "sergiors/doctrine-cache-service-provider": "dev-master",
+    "sergiors/doctrine-orm-service-provider": "dev-master",
+    "sergiors/routing-service-provider": "dev-master",
+    "sergiors/annotation-service-provider": "dev-master",
+    "sergiors/sensio-framework-extra-service-provider": "dev-master",
+    "sergiors/lullaby": "dev-master"
   }
 }

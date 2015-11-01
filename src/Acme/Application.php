@@ -3,14 +3,16 @@ namespace Acme\Acme;
 
 use Sergiors\Lullaby\Application as BaseApplication;
 use Silex\Provider\DoctrineServiceProvider;
+use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Application\UrlGeneratorTrait;
-use Inbep\Silex\Provider\DoctrineOrmServiceProvider;
-use Inbep\Silex\Provider\RoutingServiceProvider;
-use Inbep\Silex\Provider\AnnotationServiceProvider;
-use Inbep\Silex\Provider\SensioFrameworkExtraServiceProvider;
-use Inbep\Silex\Provider\TemplatingServiceProvider;
+use Sergiors\Silex\Provider\DoctrineCacheServiceProvider;
+use Sergiors\Silex\Provider\DoctrineOrmServiceProvider;
+use Sergiors\Silex\Provider\RoutingServiceProvider;
+use Sergiors\Silex\Provider\AnnotationServiceProvider;
+use Sergiors\Silex\Provider\SensioFrameworkExtraServiceProvider;
+use Sergiors\Silex\Provider\TemplatingServiceProvider;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class Application extends BaseApplication
@@ -22,18 +24,20 @@ class Application extends BaseApplication
         parent::__construct($environment, $rootDir, $values);
         $app = $this;
 
+        $app->register(new MonologServiceProvider());
         $app->register(new DoctrineServiceProvider());
+        $app->register(new DoctrineCacheServiceProvider());
         $app->register(new DoctrineOrmServiceProvider());
-        $app->register(new RoutingServiceProvider());
         $app->register(new AnnotationServiceProvider());
+        $app->register(new TemplatingServiceProvider());
+        $app->register(new RoutingServiceProvider());
         $app->register(new SensioFrameworkExtraServiceProvider());
         $app->register(new TwigServiceProvider());
-        $app->register(new TemplatingServiceProvider());
         $app->register(new UrlGeneratorServiceProvider());
     }
 
-    public function registerConfiguration(LoaderInterface $loader)
+    protected function registerConfiguration(LoaderInterface $loader)
     {
-        $loader->load($this->rootDir.'/app/config_'.$this->environment.'.yml');
+        $loader->load($this->getRootDir().'/app/config_'.$this->getEnvironment().'.yml');
     }
 }

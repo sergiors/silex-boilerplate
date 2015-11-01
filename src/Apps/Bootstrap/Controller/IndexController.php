@@ -15,10 +15,10 @@ class IndexController
      * @Route("/")
      * @Template("@Bootstrap/Index/index.html.twig")
      *
-     * @param Application $app
      * @param Request $req
+     * @return array
      */
-    public function indexAction(Application $app, Request $req)
+    public function indexAction(Request $req)
     {
         return [
             'name' => $req->get('name', 'Woody')
@@ -30,6 +30,7 @@ class IndexController
      *
      * @param Application $app
      * @param Request $req
+     * @return array
      */
     public function showAction(Application $app, Request $req)
     {

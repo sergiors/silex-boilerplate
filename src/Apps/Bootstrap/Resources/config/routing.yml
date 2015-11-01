@@ -1,3 +1,0 @@
-index:
-    resource: 'Acme\Apps\Bootstrap\Controller\IndexController'
-    type: annotation
